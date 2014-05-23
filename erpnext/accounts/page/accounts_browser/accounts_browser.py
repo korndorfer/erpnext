@@ -5,6 +5,7 @@ from __future__ import unicode_literals
 import frappe
 import frappe.defaults
 from frappe.utils import flt
+from frappe import _
 from erpnext.accounts.utils import get_balance_on
 
 @frappe.whitelist()
@@ -19,7 +20,7 @@ def get_children():
 	ctype, company = args['ctype'], args['comp']
 	
 	# root
-	if args['parent'] in ("Accounts", "Cost Centers"):
+	if args['parent'] in (_("Accounts"), _("Cost Centers")):
 		acc = frappe.db.sql(""" select 
 			name as value, if(group_or_ledger='Group', 1, 0) as expandable
 			from `tab%s`
