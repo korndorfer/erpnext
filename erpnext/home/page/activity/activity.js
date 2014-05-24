@@ -20,7 +20,7 @@ frappe.pages['activity'].onload = function(wrapper) {
 	});
 	list.run();
 
-	wrapper.appframe.set_title_right("Refresh", function() { list.run(); });
+	wrapper.appframe.set_title_right(__("Refresh"), function() { list.run(); });
 	
 	// Build Report Button
 	if(frappe.boot.user.can_get_report.indexOf("Feed")!=-1) {
@@ -38,7 +38,7 @@ erpnext.ActivityFeed = Class.extend({
 		if(!data.add_class) data.add_class = "label-default";
 		$(row).append(repl('<div style="margin: 0px">\
 			<span class="avatar avatar-small"><img src="%(imgsrc)s" /></span> \
-			<span %(onclick)s class="label %(add_class)s">%(feed_type)s</span>\
+			<span %(onclick)s class="label %(add_class)s">%(feed_label)s</span>\
 			%(link)s %(subject)s <span class="user-info">%(by)s</span></div>', data));
 	},
 	scrub_data: function(data) {
@@ -47,10 +47,12 @@ erpnext.ActivityFeed = Class.extend({
 		
 		// feedtype
 		if(!data.feed_type) {
-			data.feed_type = __(data.doc_type);
+			data.feed_type = data.doc_type;
 			data.add_class = "label-info";
 			data.onclick = repl('onclick="window.location.href=\'#!List/%(feed_type)s\';"', data)
 		}
+
+        data.feed_label = __(data.feed_type);
 		
 		// color for comment
 		if(data.feed_type=='Comment') {
@@ -75,9 +77,9 @@ erpnext.ActivityFeed = Class.extend({
 		if((last && dateutil.obj_to_str(last) != dateutil.obj_to_str(date)) || (!last)) {
 			var diff = dateutil.get_day_diff(new Date(), date);
 			if(diff < 1) {
-				pdate = 'Today';
+				pdate = __('Today');
 			} else if(diff < 2) {
-				pdate = 'Yesterday';
+				pdate = __('Yesterday');
 			} else {
 				pdate = dateutil.global_date_format(date);
 			}
