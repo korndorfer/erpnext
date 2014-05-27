@@ -8,7 +8,7 @@ pscript['onload_Sales Browser'] = function(wrapper){
 
 	wrapper.appframe.add_module_icon("Selling")
 
-	wrapper.appframe.set_title_right('Refresh', function() {
+	wrapper.appframe.set_title_right(__('Refresh'), function() {
 			wrapper.make_tree();
 		});
 
@@ -44,7 +44,7 @@ pscript['onshow_Sales Browser'] = function(wrapper){
 	// set route
 	var ctype = frappe.get_route()[1] || 'Territory';
 
-	wrapper.appframe.set_title(ctype+' Tree')
+	wrapper.appframe.set_title(__(ctype)+' '+__('Tree'))
 
 	if(erpnext.sales_chart && erpnext.sales_chart.ctype != ctype) {
 		wrapper.make_tree();
