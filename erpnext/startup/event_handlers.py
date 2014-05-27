@@ -6,6 +6,7 @@ from __future__ import unicode_literals
 import frappe
 from frappe.utils import nowtime
 from frappe.utils.user import get_user_fullname
+from frappe import _
 from erpnext.home import make_feed
 
 def on_session_creation(login_manager):
@@ -13,5 +14,5 @@ def on_session_creation(login_manager):
 	if frappe.session['user'] != 'Guest':
 		# create feed
 		make_feed('Login', 'User', login_manager.user, login_manager.user,
-			'%s logged in at %s' % (get_user_fullname(login_manager.user), nowtime()),
+			'%s '+_('logged in at')+' %s' % (get_user_fullname(login_manager.user), nowtime()),
 			login_manager.user=='Administrator' and '#8CA2B3' or '#1B750D')
