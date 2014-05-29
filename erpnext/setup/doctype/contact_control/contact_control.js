@@ -41,7 +41,7 @@ cur_frm.cscript.render_contact_row = function(wrapper, data) {
 		function(i, v) {
 			if(v[0] && data[v[0]]) {
 				description.push(repl('<h6>%(label)s:</h6> %(value)s', {
-					label: v[1],
+					label: __(v[1]),
 					value: data[v[0]],
 				}));
 			}
@@ -53,7 +53,7 @@ cur_frm.cscript.render_contact_row = function(wrapper, data) {
 
 cur_frm.cscript.render_address_row = function(wrapper, data) {
 	// prepare data
-	data.fullname = data.address_type;
+	data.fullname = __(data.address_type);
 	data.primary = '';
 	if (data.is_primary_address) data.primary += ' [Preferred for Billing]';
 	if (data.is_shipping_address) data.primary += ' [Preferred for Shipping]';
@@ -78,7 +78,7 @@ cur_frm.cscript.render_address_row = function(wrapper, data) {
 		function(i, v) {
 			if(data[v[0]]) {
 				description.push(repl('<h6>%(label)s:</h6> %(value)s', {
-					label: v[1],
+					label: __(v[1]),
 					value: data[v[0]],
 				}));
 			}
@@ -97,13 +97,14 @@ cur_frm.cscript.render_row_in_wrapper = function(wrapper, data, doctype) {
 	// render
 	var $wrapper = $(wrapper);
 
-	data.doctype = doctype.toLowerCase();
+	data.deltext = __('delete this');
+    data.doctype = __(doctype).toLowerCase();
 
 	$wrapper.append(repl("\
 		<h4><a class='link_type'>%(fullname)s</a>%(primary)s</h4>\
 		<div class='description'>\
 			<p>%(description)s</p>\
-			<p><a class='delete link_type'>delete this %(doctype)s</a></p>\
+			<p><a class='delete link_type'>%(deltext)s %(doctype)s</a></p>\
 		</div>", data));
 
 	// make link
