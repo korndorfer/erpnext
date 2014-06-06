@@ -3,16 +3,16 @@
 """ does not exists",""" Não existe"
 %  Delivered,Entregue %
 % Amount Billed,Valor faturado %
-% Billed,Faturado %
+% Billed,% Faturado
 % Completed,% Concluído
-% Delivered,Entregue %
-% Installed,Instalado %
-% Received,Recebido %
+% Delivered,% Entregue
+% Installed,% Instalado
+% Received,% Recebido
 % of materials billed against this Purchase Order.,% de materiais faturado contra esta Ordem de Compra.
 % of materials billed against this Sales Order,% de materiais faturados contra esta Pedido de Venda
 % of materials delivered against this Delivery Note,% de materiais entregues contra esta Guia de Remessa
 % of materials delivered against this Sales Order,% de materiais entregues contra esta Pedido de Venda
-% of materials ordered against this Material Request,% De materiais encomendados contra este pedido se
+% of materials ordered against this Material Request,% De materiais encomendados contra este Pedido de Materiais
 % of materials received against this Purchase Order,% de materiais recebidos contra esta Ordem de Compra
 %(conversion_rate_label)s is mandatory. Maybe Currency Exchange record is not created for %(from_currency)s to %(to_currency)s,% ( conversion_rate_label ) s é obrigatória. Talvez recorde Câmbios não é criado para % ( from_currency ) s para% ( to_currency ) s
 'Actual Start Date' can not be greater than 'Actual End Date',' Real data de início ' não pode ser maior que ' Actual Data Final '
@@ -1099,9 +1099,9 @@ From Material Request,Do Pedido de Materiais
 From Opportunity,Da Oportunidade
 From Package No.,Do Pacote Nº
 From Purchase Order,Da Ordem de Compra
-From Purchase Receipt,De Recibo de Compra
+From Purchase Receipt,Do Recibo de Compra
 From Quotation,Da Cotação
-From Sales Order,Da Pedido de Vendas
+From Sales Order,Do Pedido de Vendas
 From Supplier Quotation,Da Cotação do Fornecedor
 From Time,Do Horário
 From Value,Do Valor
@@ -2131,7 +2131,7 @@ Pricing Rule Help,Ajuda com a Regra de Preços
 "Pricing Rule is made to overwrite Price List / define discount percentage, based on some criteria.","A Regra de Preços é feita para sobrescrever a Lista de Preços / definir percentual de descontos, baseado em algum critério."
 Pricing Rules are further filtered based on quantity.,As Regras de Preços são também filtradas baseadas na quantidade.
 Print Format Style,Estilo de Formato de Impressão
-Print Heading,Título da Impressão
+Print Heading,Cabeçalho da Impressão
 Print Without Amount,Imprimir Sem Quantia
 Print and Stationary,Imprimir e estacionária
 Printing and Branding,Impressão e Marca
@@ -2380,15 +2380,15 @@ Request Type,Tipo de Solicitação
 Request for Information,Solicitação de Informação
 Request for purchase.,Solicitação de Compra.
 Requested,Solicitado(a)
-Requested For,Solicitados(as) Para
+Requested For,Solicitado(a) Para
 Requested Items To Be Ordered,Itens Solicitados a Serem Encomendados
 Requested Items To Be Transferred,Itens Solicitados A Serem Transferidos
 Requested Qty,Qtde Solicitada
 "Requested Qty: Quantity requested for purchase, but not ordered.","Qtde Solicitada: Quantidade solicitada para a compra, mas não pedida."
 Requests for items.,Solicitações de itens.
 Required By,Requerido(a) Por
-Required Date,Data Obrigatória
-Required Qty,Quantidade Requerida
+Required Date,Data Solicitada
+Required Qty,Quantidade Solicitada
 Required only for sample item.,Necessário apenas para o item de amostra.
 Required raw materials issued to the supplier for producing a sub - contracted item.,Matérias-primas necessárias emitidas para o fornecedor para a produção de um item sub-contratado.
 Research,Pesquisa
