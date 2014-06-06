@@ -317,7 +317,7 @@ Balance Sheet,Balanço
 Balance Value,Valor do Balanço
 Balance for Account {0} must always be {1},Saldo Conta {0} deve ser sempre {1}
 Balance must be,Equilíbrio deve ser
-"Balances of Accounts of type ""Bank"" or ""Cash""","Saldos das contas do tipo "" Banco"" ou ""Cash """
+"Balances of Accounts of type ""Bank"" or ""Cash""","Saldos das contas do tipo ""Banco"" ou ""Caixa"""
 Bank,Banco
 Bank A/C No.,Nº Cta. Bancária
 Bank Account,Conta Bancária
@@ -331,7 +331,7 @@ Bank Reconciliation,Reconciliação Bancária
 Bank Reconciliation Detail,Detalhe da Reconciliação Bancária
 Bank Reconciliation Statement,Declaração de reconciliação bancária
 Bank Voucher,Comprovante Bancário
-Bank/Cash Balance,Banco/Saldo de Caixa
+Bank/Cash Balance,Saldo de Banco/Caixa
 Banking,Bancos
 Barcode,Código de Barras
 Barcode {0} already used in Item {1},Barcode {0} já utilizado em item {1}
@@ -457,17 +457,17 @@ Carry Forward,Encaminhar
 Carry Forwarded Leaves,Encaminhar Licenças
 Case No(s) already in use. Try from Case No {0},Processo n º (s) já está em uso . Tente de Processo n {0}
 Case No. cannot be 0,Caso n não pode ser 0
-Cash,Numerário
-Cash In Hand,Dinheiro na mão
-Cash Voucher,Comprovante de Caixa
-Cash or Bank Account is mandatory for making payment entry,Dinheiro ou conta bancária é obrigatória para a tomada de entrada de pagamento
+Cash,Caixa
+Cash In Hand,Dinheiro Em Caixa
+Cash Voucher,Comprovante Do Caixa
+Cash or Bank Account is mandatory for making payment entry,Caixa ou Conta Bancária são obrigatórias para a fazer lançamentos de pagamento
 Cash/Bank Account,Conta do Caixa/Banco
-Casual Leave,Casual Deixar
+Casual Leave,Licença Casual
 Cell Number,Telefone Celular
 Change UOM for an Item.,Alterar UDM de um item.
 Change the starting / current sequence number of an existing series.,Alterar o número sequencial de início/atual de uma série existente.
 Channel Partner,Parceiro de Canal
-Charge of type 'Actual' in row {0} cannot be included in Item Rate,Charge do tipo ' real ' na linha {0} não pode ser incluído no item Taxa
+Charge of type 'Actual' in row {0} cannot be included in Item Rate,Taxa do tipo 'Real' na linha {0} não pode ser incluído no Valor do Item
 Chargeable,Taxável
 Charity and Donations,Caridade e Doações
 Chart Name,Nome do Gráfico
@@ -733,7 +733,7 @@ Default Bank / Cash account will be automatically updated in POS Invoice when th
 Default Bank Account,Conta Bancária Padrão
 Default Buying Cost Center,Centro de Custo de Compra Padrão
 Default Buying Price List,Compra Lista de Preços Padrão
-Default Cash Account,Conta Caixa padrão
+Default Cash Account,Conta de Caixa Padrão
 Default Company,Empresa padrão
 Default Cost Center for tracking expense for this item.,Centro de Custo padrão para controle de despesas para este item.
 Default Currency,Moeda padrão
@@ -1287,7 +1287,7 @@ Is Advance,É antecipado
 Is Cancelled,Está Cancelado
 Is Carry Forward,É encaminhado
 Is Default,É Padrão
-Is Encash,É cobrança
+Is Encash,É Cobrança
 Is Fixed Asset Item,É Item Imobilizado
 Is LWP,É LWP
 Is Opening,É Abertura
@@ -1756,7 +1756,7 @@ Note User,Nota usuários
 Note: Due Date exceeds the allowed credit days by {0} day(s),Nota: Due Date excede os dias de crédito permitidas por {0} dia (s)
 Note: Email will not be sent to disabled users,Nota: e-mails não serão enviado para usuários desabilitados
 Note: Item {0} entered multiple times,Nota : Item {0} entrou várias vezes
-Note: Payment Entry will not be created since 'Cash or Bank Account' was not specified,Nota: Entrada pagamento não será criado desde 'Cash ou conta bancária ' não foi especificado
+Note: Payment Entry will not be created since 'Cash or Bank Account' was not specified,Nota: Lançamento de Pagamento não será criado porque 'Caixa ou Conta Bancária' não foi especificado
 Note: System will not check over-delivery and over-booking for Item {0} as quantity or amount is 0,Nota : O sistema não irá verificar o excesso de entrega e sobre- reserva para item {0} como quantidade ou valor é 0
 Note: There is not enough leave balance for Leave Type {0},Nota: Não é suficiente equilíbrio pela licença Tipo {0}
 Note: This Cost Center is a Group. Cannot make accounting entries against groups.,Nota: Este Centro de Custo é um grupo . Não pode fazer lançamentos contábeis contra grupos .
@@ -2029,7 +2029,7 @@ Please select {0},Por favor selecione {0}
 Please select {0} first,Por favor selecione {0} primeiro
 Please set Dropbox access keys in your site config,Defina teclas de acesso Dropbox em sua configuração local
 Please set Google Drive access keys in {0},Defina teclas de acesso do Google Drive em {0}
-Please set default Cash or Bank account in Mode of Payment {0},Defina a Conta Caixa ou Banco Padrão no Forma de Pagamento {0}
+Please set default Cash or Bank account in Mode of Payment {0},Defina o Caixa ou Conta Bancária Padrão na Forma de Pagamento {0}
 Please set default value {0} in Company {0},Por favor defina o valor padrão {0} na Empresa {0}
 Please set {0},Por favor defina {0}
 Please setup Employee Naming System in Human Resource > HR Settings,Por favor configure o Sistema de Nomeação de Colaboradores em Recursos Humanos&gt; Configurações RH
