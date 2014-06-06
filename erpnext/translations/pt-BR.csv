@@ -30,11 +30,35 @@
 'Update Stock' for Sales Invoice {0} must be set,"'Atualizar Estoque ""para vendas Invoice {0} deve ser definido"
 * Will be calculated in the transaction.,* Será calculado na transação.
 "1 Currency = [?] Fraction
-For e.g. 1 USD = 100 Cent",1 Moeda = [?] Fração \ nPor exemplo
+For e.g. 1 USD = 100 Cent","1 Moeda = [?] Fração
+Por exemplo 1 R$ = 100 Centavos"
 1. To maintain the customer wise item code and to make them searchable based on their code use this option,1. Para manter o código de item do cliente e para torná-los pesquisáveis ​​com base em seu código use esta opção
 "<a href=""#Sales Browser/Customer Group"">Add / Edit</a>","<a href=""#Sales Browser/Customer grupo""> Adicionar / Editar </ a>"
 "<a href=""#Sales Browser/Item Group"">Add / Edit</a>","<a href=""#Sales Browser/Item grupo""> Adicionar / Editar </ a>"
 "<a href=""#Sales Browser/Territory"">Add / Edit</a>","<a href=""#Sales Browser/Territory""> Adicionar / Editar </ a>"
+"<h4>Default Template</h4>
+<p>Uses <a href=""http://jinja.pocoo.org/docs/templates/"">Jinja Templating</a> and all the fields of Address (including Custom Fields if any) will be available</p>
+<pre><code>{{ address_line1 }}&lt;br&gt;
+{% if address_line2 %}{{ address_line2 }}&lt;br&gt;{% endif -%}
+{{ city }}&lt;br&gt;
+{% if state %}{{ state }}&lt;br&gt;{% endif -%}
+{% if pincode %} PIN:  {{ pincode }}&lt;br&gt;{% endif -%}
+{{ country }}&lt;br&gt;
+{% if phone %}Phone: {{ phone }}&lt;br&gt;{% endif -%}
+{% if fax %}Fax: {{ fax }}&lt;br&gt;{% endif -%}
+{% if email_id %}Email: {{ email_id }}&lt;br&gt;{% endif -%}
+</code></pre>","<h4>O Modelo Padrão</h4>
+<p>Utiliza <a href=""http://jinja.pocoo.org/docs/templates/"">Jinja Templating</a> e todos os campos do Endereço (incluindo Campos Personalizados se houver) estarão disponíveis</p>
+<pre><code>{{ address_line1 }}&lt;br&gt;
+{% if address_line2 %}{{ address_line2 }}&lt;br&gt;{% endif -%}
+{{ city }}&lt;br&gt;
+{% if state %}{{ state }}&lt;br&gt;{% endif -%}
+{% if pincode %} PIN:  {{ pincode }}&lt;br&gt;{% endif -%}
+{{ country }}&lt;br&gt;
+{% if phone %}Phone: {{ phone }}&lt;br&gt;{% endif -%}
+{% if fax %}Fax: {{ fax }}&lt;br&gt;{% endif -%}
+{% if email_id %}Email: {{ email_id }}&lt;br&gt;{% endif -%}
+</code></pre>"
 A Customer Group exists with same name please change the Customer name or rename the Customer Group,Um grupo de clientes existente com o mesmo nome. Por favor altere o nome do cliente ou renomear o grupo de clientes
 A Customer exists with same name,Um cliente existe com mesmo nome
 A Lead with this email id should exist,Um Prospecto com esse endereço de e-mail deve existir
@@ -44,7 +68,6 @@ A symbol for this currency. For e.g. $,Um símbolo para esta moeda. Por exemplo:
 AMC Expiry Date,Data de Validade do CAM
 Abbr,Abrev
 Abbreviation cannot have more than 5 characters,Abreviatura não pode ter mais de 5 caracteres
-About,Sobre
 Above Value,Acima de Valor
 Absent,Ausente
 Acceptance Criteria,Critérios de Aceitação
@@ -59,6 +82,8 @@ Account Details,Detalhes da Conta
 Account Head,Conta
 Account Name,Nome da Conta
 Account Type,Tipo de Conta
+"Account balance already in Credit, you are not allowed to set 'Balance Must Be' as 'Debit'","O saldo da conta já está no Crédito, você não tem permissão para definir 'Saldo deve ser' como 'Débito'"
+"Account balance already in Debit, you are not allowed to set 'Balance Must Be' as 'Credit'","Saldo da conta já em Débito, você não está autorizado a definir 'Saldo deve ser' para 'Crédito'"
 Account for the warehouse (Perpetual Inventory) will be created under this Account.,Conta para o almoxarifado (Inventário Permanente) será criada nessa conta.
 Account head {0} created,Cabeçalho da Conta {0} criado
 Account must be a balance sheet account,Conta deve ser uma conta de balanço
@@ -74,7 +99,8 @@ Account {0} is frozen,Conta {0} está congelado
 Account {0} is inactive,Conta {0} está inativo
 Account {0} must be of type 'Fixed Asset' as Item {1} is an Asset Item,"Conta {0} deve ser do tipo "" Ativo Fixo "" como item {1} é um item de ativos"
 "Account: {0} can only be updated via \
-					Stock Transactions",Conta: {0} só pode ser atualizado via \ \ n Stock Transações
+					Stock Transactions","Conta: {0} só pode ser atualizada via \
+					Transações do Estoque"
 Accountant,Contador
 Accounting,Contabilidade
 "Accounting Entries can be made against leaf nodes, called","Lançamentos contábeis podem ser feitos contra nós folha, chamados"
@@ -124,6 +150,7 @@ Address Details,Detalhes do Endereço
 Address HTML,Endereço HTML
 Address Line 1,Endereço Linha 1
 Address Line 2,Endereço Linha 2
+Address Template,Modelo de Endereço
 Address Title,Título do Endereço
 Address Title is mandatory.,Endereço de título é obrigatório.
 Address Type,Tipo de Endereço
@@ -131,7 +158,7 @@ Address master.,Cadastro de endereços.
 Administrative Expenses,despesas administrativas
 Administrative Officer,Chefe Administrativo
 Advance Amount,Quantidade Antecipada
-Advance amount,Valor do adiantamento
+Advance amount,Valor antecipada
 Advances,Avanços
 Advertisement,Anúncio
 Advertising,Publicidade
@@ -140,8 +167,8 @@ After Sale Installations,Instalações Pós-Venda
 Against,Contra
 Against Account,Contra Conta
 Against Bill {0} dated {1},Contra Fatura {0} {1} datada
-Against Docname,Contra Docname
-Against Doctype,Contra Doctype
+Against Docname,Contra Documento
+Against Doctype,Contra Tipo de Documento
 Against Document Detail No,Contra Detalhe do Documento Nº
 Against Document No,Contra Documento Nº
 Against Entries,Contra Lançamentos
@@ -149,8 +176,8 @@ Against Expense Account,Contra a Conta de Despesas
 Against Income Account,Contra a Conta de Receita
 Against Journal Voucher,Contra Comprovante do Livro Diário
 Against Journal Voucher {0} does not have any unmatched {1} entry,Contra Jornal Vale {0} não tem {1} entrada incomparável
-Against Purchase Invoice,Contra a Nota Fiscal de Compra
-Against Sales Invoice,Contra a Nota Fiscal de Venda
+Against Purchase Invoice,Contra a Fatura de Compra
+Against Sales Invoice,Contra a Fatura de Venda
 Against Sales Order,Contra Pedido de Vendas
 Against Voucher,Contra Comprovante
 Against Voucher Type,Contra Tipo de Comprovante
@@ -205,9 +232,10 @@ Allow the following users to approve Leave Applications for block days.,Permitir
 Allow user to edit Price List Rate in transactions,Permitir ao usuário editar Valor da Lista de Preços em transações
 Allowance Percent,Percentual de Reserva
 Allowance for over-delivery / over-billing crossed for Item {0},Reserva para over- entrega / sobre- faturamento cruzou para item {0}
+Allowance for over-delivery / over-billing crossed for Item {0}.,Tolerância para sobre-envio / sobre-faturamento cruzado para o Item {0}.
 Allowed Role to Edit Entries Before Frozen Date,Permitidos Papel para editar entradas Antes Congelado Data
 Amended From,Alterado De
-Amount,Montante
+Amount,Valor Total
 Amount (Company Currency),Montante (Moeda da Empresa)
 Amount <=,Montante <=
 Amount >=,Montante >=
@@ -287,8 +315,8 @@ Automotive,Automotivo
 Autoreply when a new mail is received,Responder automaticamente quando um novo e-mail é recebido
 Available,Disponível
 Available Qty at Warehouse,Qtde Disponível no Almoxarifado
-Available Stock for Packing Items,Estoque disponível para embalagem itens
-"Available in BOM, Delivery Note, Purchase Invoice, Production Order, Purchase Order, Purchase Receipt, Sales Invoice, Sales Order, Stock Entry, Timesheet","Disponível em BOM, nota de entrega , fatura de compra , ordem de produção , ordem de compra , Recibo de compra , nota fiscal de venda , pedido de venda , Stock entrada , quadro de horários"
+Available Stock for Packing Items,Estoque Disponível para Itens da Embalagem
+"Available in BOM, Delivery Note, Purchase Invoice, Production Order, Purchase Order, Purchase Receipt, Sales Invoice, Sales Order, Stock Entry, Timesheet","Disponível em BOM, nota de entrega , fatura de compra , ordem de produção , ordem de compra , Recibo de compra , fatura de venda , pedido de venda , Stock entrada , quadro de horários"
 Average Age,Idade Média
 Average Commission Rate,Taxa de Comissão Média
 Average Discount,Desconto Médio
@@ -329,7 +357,7 @@ Bank Name,Nome do Banco
 Bank Overdraft Account,Conta Garantida Banco
 Bank Reconciliation,Reconciliação Bancária
 Bank Reconciliation Detail,Detalhe da Reconciliação Bancária
-Bank Reconciliation Statement,Declaração de reconciliação bancária
+Bank Reconciliation Statement,Extrato de Reconciliação Bancária
 Bank Voucher,Comprovante Bancário
 Bank/Cash Balance,Saldo de Banco/Caixa
 Banking,Bancos
@@ -394,10 +422,9 @@ Budget Details,Detalhes do Orçamento
 Budget Distribution,Distribuição de Orçamento
 Budget Distribution Detail,Detalhe da Distribuição de Orçamento
 Budget Distribution Details,Detalhes da Distribuição de Orçamento
-Budget Variance Report,Relatório Variance Orçamento
+Budget Variance Report,Relatório de Variação do Orçamento
 Budget cannot be set for Group Cost Centers,Orçamento não pode ser definido por centros de custo do grupo
 Build Report,Construir Relatório
-Built on,construído sobre
 Bundle items at time of sale.,Empacotar itens no momento da venda.
 Business Development Manager,Gerente de Desenvolvimento de Negócios
 Buying,Compras
@@ -432,7 +459,7 @@ Cannot approve leave as you are not authorized to approve leaves on Block Dates,
 Cannot cancel because Employee {0} is already approved for {1},Não pode cancelar porque Colaborador {0} já está aprovado para {1}
 Cannot cancel because submitted Stock Entry {0} exists,Não pode cancelar por causa da entrada submetido {0} existe
 Cannot carry forward {0},Não é possível levar adiante {0}
-Cannot change Year Start Date and Year End Date once the Fiscal Year is saved.,Não é possível alterar Ano Data de Início e Fim de Ano Data vez o Ano Fiscal é salvo.
+Cannot change Fiscal Year Start Date and Fiscal Year End Date once the Fiscal Year is saved.,Não é possível alterar a Data Inicial e a Data Final do Ano Fiscal pois o mesmo foi salvo.
 "Cannot change company's default currency, because there are existing transactions. Transactions must be cancelled to change the default currency.","Não é possível alterar a moeda padrão da empresa, porque existem operações existentes. Transações devem ser canceladas para alterar a moeda padrão."
 Cannot convert Cost Center to ledger as it has child nodes,"Não é possível converter Centro de Custo em livro contábil, uma vez que tem nós filhos"
 Cannot covert to Group because Master Type or Account Type is selected.,Não é possível converter ao Grupo porque Type Master ou Tipo de Conta é selecionado.
@@ -441,7 +468,7 @@ Cannot deactive or cancle BOM as it is linked with other BOMs,"Não pode desativ
 Cannot deduct when category is for 'Valuation' or 'Valuation and Total',Não pode deduzir quando é para categoria ' Avaliação ' ou ' Avaliação e Total'
 "Cannot delete Serial No {0} in stock. First remove from stock, then delete.","Não é possível excluir Nº de Série {0} em estoque. Primeiro retire do estoque , em seguida, exclua ."
 "Cannot directly set amount. For 'Actual' charge type, use the rate field","Não é possível definir diretamente montante. Para ' Actual ' tipo de carga , use o campo taxa"
-"Cannot overbill for Item {0} in row {0} more than {1}. To allow overbilling, please set in 'Setup' > 'Global Defaults'","Não pode overbill para item {0} na linha {0} mais de {1}. Para permitir o superfaturamento , defina em ""Setup"" > "" padrões globais """
+"Cannot overbill for Item {0} in row {0} more than {1}. To allow overbilling, please set in Stock Settings","Não é possível sobrefaturar para o Item {0} na linha {0} mais de {1}. Para permitir sobrefaturação, por falor defina nas Configurações do Estoque"
 Cannot produce more Item {0} than Sales Order quantity {1},Não é possível produzir mais item {0} do que a quantidade Pedido de Vendas {1}
 Cannot refer row number greater than or equal to current row number for this Charge type,Não é possível consultar número da linha superior ou igual ao número da linha atual para este tipo de carga
 Cannot return more than {0} for Item {1},Não pode retornar mais de {0} para {1} item
@@ -457,7 +484,7 @@ Carry Forward,Encaminhar
 Carry Forwarded Leaves,Encaminhar Licenças
 Case No(s) already in use. Try from Case No {0},Processo n º (s) já está em uso . Tente de Processo n {0}
 Case No. cannot be 0,Caso n não pode ser 0
-Cash,Caixa
+Cash,Dinheiro
 Cash In Hand,Dinheiro Em Caixa
 Cash Voucher,Comprovante Do Caixa
 Cash or Bank Account is mandatory for making payment entry,Caixa ou Conta Bancária são obrigatórias para a fazer lançamentos de pagamento
@@ -471,18 +498,19 @@ Charge of type 'Actual' in row {0} cannot be included in Item Rate,Taxa do tipo 
 Chargeable,Taxável
 Charity and Donations,Caridade e Doações
 Chart Name,Nome do Gráfico
+Chart of,Plano de
 Chart of Accounts,Plano de Contas
 Chart of Cost Centers,Plano de Centros de Custo
 Check how the newsletter looks in an email by sending it to your email.,Verifique como a newsletter é exibido em um e-mail enviando-o para o seu e-mail.
-"Check if recurring invoice, uncheck to stop recurring or put proper End Date","Marque se é uma nota fiscal recorrente, desmarque para parar a recorrência ou colocar uma Data Final adequada"
-"Check if you need automatic recurring invoices. After submitting any sales invoice, Recurring section will be visible.","Marque se você precisa de notas fiscais recorrentes automáticas. Depois de enviar qualquer nota fiscal de venda, a seção Recorrente será visível."
+"Check if recurring invoice, uncheck to stop recurring or put proper End Date","Marque se é uma fatura recorrente, desmarque para parar a recorrência ou colocar uma Data Final adequada"
+"Check if you need automatic recurring invoices. After submitting any sales invoice, Recurring section will be visible.","Marque se você precisa de notas fiscais recorrentes automáticas. Depois de enviar qualquer fatura de venda, a seção Recorrente será visível."
 Check if you want to send salary slip in mail to each employee while submitting salary slip,Marque se você quiser enviar a folha de pagamento pelo correio a cada colaborador ao enviar a folha de pagamento
 Check this if you want to force the user to select a series before saving. There will be no default if you check this.,Marque esta opção se você deseja forçar o usuário a selecionar uma série antes de salvar. Não haverá nenhum padrão se você marcar isso.
 Check this if you want to show in website,Marque esta opção se você deseja mostrar no site
 Check this to disallow fractions. (for Nos),Marque esta opção para não permitir frações. (Para n)
 Check this to pull emails from your mailbox,Marque para descarregar os e-mails de sua caixa de correio
 Check to activate,Marque para ativar
-Check to make Shipping Address,Marque para criar Endereço de Remessa
+Check to make Shipping Address,Marque para criar Endereço de Envio
 Check to make primary address,Marque para criar Endereço Principal
 Chemical,Química
 Cheque,Cheque
@@ -490,8 +518,8 @@ Cheque Date,Data do Cheque
 Cheque Number,Nº do Cheque
 Child account exists for this account. You can not delete this account.,Conta Filha existe para esta conta. Você não pode excluir esta conta.
 City,Cidade
-City/Town,Cidade/Município
 City Tax Number,Inscrição Municipal
+City/Town,Cidade/Município
 Claim Amount,Valor Requerido
 Claims for company expense.,Os pedidos de despesa da empresa.
 Class / Percentage,Classe / Percentual
@@ -591,7 +619,7 @@ Conversion Factor is required,Fator de Conversão é necessária
 Conversion factor cannot be in fractions,Fator de conversão não pode estar em frações
 Conversion factor for default Unit of Measure must be 1 in row {0},Fator de conversão de unidade de medida padrão deve ser 1 na linha {0}
 Conversion rate cannot be 0 or 1,A taxa de conversão não pode ser 0 ou 1
-Convert into Recurring Invoice,Converter em Nota Fiscal Recorrente
+Convert into Recurring Invoice,Converter em Fatura Recorrente
 Convert to Group,Converter em Grupo
 Convert to Ledger,Converter para Livro Contábil
 Converted,Convertido(a)
@@ -606,10 +634,12 @@ Cost Center is required in row {0} in Taxes table for type {1},Centro de Custo �
 Cost Center with existing transactions can not be converted to group,Centros de Custo com as operações existentes não podem ser convertidos em grupo
 Cost Center with existing transactions can not be converted to ledger,Centros de Custo com as operações existentes não podem ser convertidos em livro contábil
 Cost Center {0} does not belong to Company {1},Centro de Custo {0} não pertence a Empresa {1}
+Cost Centers,Centros de Custo
 Cost of Goods Sold,Custo dos Produtos Vendidos
 Costing,Custeio
 Country,País
 Country Name,Nome do País
+Country wise default Address Templates,Modelos de Endereço por País
 "Country, Timezone and Currency","País, Fuso Horário e Moeda"
 Create Bank Voucher for the total salary paid for the above selected criteria,Criar Comprovante Bancário para o salário total pago para os critérios acima selecionados
 Create Customer,Criar Cliente
@@ -663,9 +693,10 @@ Customer (Receivable) Account,Conta de Cliente (Receber)
 Customer / Item Name,Cliente / Nome do Item
 Customer / Lead Address,Cliente / Endereço do Prospecto
 Customer / Lead Name,Cliente / Nome do Prospecto
-Customer Account Head,Cliente Cabeça Conta
-Customer Acquisition and Loyalty,Aquisição de Cliente e Fidelização
-Customer Address,Endereço do cliente
+Customer > Customer Group > Territory,Cliente > Grupo de Clientes > Território
+Customer Account Head,Conta Principal do Cliente
+Customer Acquisition and Loyalty,Aquisição de Clientes e Fidelização
+Customer Address,Endereço do Cliente
 Customer Addresses And Contacts,Endereços do Cliente e Contatos
 Customer Code,Código do Cliente
 Customer Codes,Códigos de Clientes
@@ -728,8 +759,9 @@ Deduction1,Dedução 1
 Deductions,Deduções
 Default,Padrão
 Default Account,Conta Padrão
+Default Address Template cannot be deleted,O Modelo Padrão de Endereço não pode ser excluído
 Default BOM,LDM padrão
-Default Bank / Cash account will be automatically updated in POS Invoice when this mode is selected.,Conta do Banco/Caixa padrão será atualizada automaticamente na nota fiscal do PDV quando este modo for selecionado.
+Default Bank / Cash account will be automatically updated in POS Invoice when this mode is selected.,Conta do Banco/Caixa padrão será atualizada automaticamente na fatura do PDV quando este modo for selecionado.
 Default Bank Account,Conta Bancária Padrão
 Default Buying Cost Center,Centro de Custo de Compra Padrão
 Default Buying Price List,Compra Lista de Preços Padrão
@@ -750,7 +782,7 @@ Default Stock UOM,UDM Padrão do Estoque
 Default Supplier,Fornecedor Padrão
 Default Supplier Type,Tipo de Fornecedor Padrão
 Default Target Warehouse,Almoxarifado de destino padrão
-Default Territory,Território Padrão
+Default Territory,Território padrão
 Default Unit of Measure,Unidade de Medida Padrão
 "Default Unit of Measure can not be changed directly because you have already made some transaction(s) with another UOM. To change default UOM, use 'UOM Replace Utility' tool under Stock module.","Unidade de medida padrão não pode ser alterado diretamente porque você já fez alguma(s) transação(ões) com outra UDM. Para alterar a UDM padrão, use a ferramenta 'Utilitário de Substituição de UDM' do Módulo Estoque."
 Default Valuation Method,Método de Valorização Padrão
@@ -807,9 +839,10 @@ Disabled,Desativado
 Discount  %,% Desconto
 Discount %,% Desconto
 Discount (%),Desconto (%)
-Discount Amount,Montante do Desconto
-"Discount Fields will be available in Purchase Order, Purchase Receipt, Purchase Invoice","Campos de desconto estarão disponíveis em Ordem de Compra, Recibo de Compra, Nota Fiscal de Compra"
+Discount Amount,Total de Desconto
+"Discount Fields will be available in Purchase Order, Purchase Receipt, Purchase Invoice","Campos de desconto estarão disponíveis em Ordem de Compra, Recibo de Compra, Fatura de Compra"
 Discount Percentage,Percentagem de Desconto
+Discount Percentage can be applied either against a Price List or for all Price List.,O Percentual de Desconto pode ser aplicado tanto em uma Lista de Preços quanto para todas.
 Discount must be less than 100,Desconto deve ser inferior a 100
 Discount(%),Desconto(%)
 Dispatch,expedição
@@ -842,7 +875,8 @@ Download Template,Baixar o Modelo
 Download a report containing all raw materials with their latest inventory status,Baixar um relatório contendo todas as matérias-primas com o seu estado mais recente do inventário
 "Download the Template, fill appropriate data and attach the modified file.","Baixe o modelo , preencha os dados apropriados e anexe o arquivo modificado."
 "Download the Template, fill appropriate data and attach the modified file.
-All dates and employee combination in the selected period will come in the template, with existing attendance records","Baixe o modelo , preencha os dados apropriados e anexe o arquivo modificado. \ NTodas datas e combinação de funcionários no período selecionado virá no modelo, com registros de freqüência existentes"
+All dates and employee combination in the selected period will come in the template, with existing attendance records","Descarregue o Modelo, preencha os dados apropriados e anexe o arquivo modificado.
+Todas as datas e combinações de colaboradores no período selecionado virão no modelo, com os registros de presença existentes"
 Draft,Rascunho
 Dropbox,Dropbox
 Dropbox Access Allowed,Dropbox acesso permitido
@@ -944,9 +978,11 @@ Entries before {0} are frozen,Entradas antes {0} são congelados
 Equity,Patrimônio
 Error: {0} > {1},Erro: {0} > {1}
 Estimated Material Cost,Custo Estimado de Material
+"Even if there are multiple Pricing Rules with highest priority, then following internal priorities are applied:","Mesmo se houverem múltiplas Regras de Preço com prioridade mais alta, as seguintes prioridades internas serão aplicadas:"
 Everyone can read,Todo mundo pode ler
 "Example: ABCD.#####
-If series is set and Serial No is not mentioned in transactions, then automatic serial number will be created based on this series. If you always want to explicitly mention Serial Nos for this item. leave this blank.","Exemplo: . ABCD # # # # # \ nSe série está definido e número de série não é mencionado em transações , então o número de série automático será criado com base nessa série."
+If series is set and Serial No is not mentioned in transactions, then automatic serial number will be created based on this series. If you always want to explicitly mention Serial Nos for this item. leave this blank.","Exemplo: ABCD.#####
+Se a série estiver definida e o Nº de Série não for mencionado nas transações, então um número de série automático será criado baseado nesta série. Se você sempre necessita mencionar explicitamente Nºs de Série para este item, deixe o campo em branco."
 Exchange Rate,Taxa de Câmbio
 Excise Page Number,Nº de Página do Imposto
 Excise Voucher,Comprovante do imposto
@@ -1002,7 +1038,7 @@ Feed Type,Tipo de alimentação
 Feedback,Comentários
 Female,Feminino
 Fetch exploded BOM (including sub-assemblies),Fetch BOM explodiu (incluindo sub-conjuntos )
-"Field available in Delivery Note, Quotation, Sales Invoice, Sales Order","Campo disponível na Guia de Remessa, Cotação, Nota Fiscal de Venda, Pedido de Venda"
+"Field available in Delivery Note, Quotation, Sales Invoice, Sales Order","Campo disponível na Guia de Remessa, Cotação, Fatura de Venda, Pedido de Venda"
 Files Folder ID,ID da Pasta de Arquivos
 Fill the form and save it,Preencha o formulário e salvá-lo
 Filter based on customer,Filtrar baseado em cliente
@@ -1016,6 +1052,9 @@ Finished Goods,Produtos Acabados
 First Name,Nome
 First Responded On,Primeira Resposta Em
 Fiscal Year,Exercício Fiscal
+Fiscal Year Start Date and Fiscal Year End Date are already set in Fiscal Year {0},A Data Inicial e a Data Final do Ano Fiscal já estão definidas no Ano Fiscal {0}
+Fiscal Year Start Date and Fiscal Year End Date cannot be more than a year apart.,A Data Inicial e a Data Final do Ano Fiscal não devem distanciar-se a mais de um ano.
+Fiscal Year Start Date should not be greater than Fiscal Year End Date,A Data Inicial do Ano Fiscal não deve ser maior do que a Data Final.
 Fixed Asset,Ativo Fixo
 Fixed Assets,Ativos Fixos
 Follow via Email,Siga por E-Mail
@@ -1172,6 +1211,7 @@ Hour,Hora
 Hour Rate,Valor por Hora
 Hour Rate Labour,Valor por Hora Trabalhada
 Hours,Horas
+How Pricing Rule is applied?,Como a Regra de Preços é aplicada?
 How frequently?,Com que frequência?
 "How should this currency be formatted? If not set, will use system defaults","Como essa moeda deve ser formatada? Se não for definido, serão usados os padrões do sistema"
 Human Resources,Recursos Humanos
@@ -1189,12 +1229,15 @@ If different than customer address,Se diferente do endereço do cliente
 "If disable, 'Rounded Total' field will not be visible in any transaction","Se desativar, &#39;Arredondado Total&#39; campo não será visível em qualquer transação"
 "If enabled, the system will post accounting entries for inventory automatically.","Se ativado, o sistema irá postar lançamentos contábeis para o inventário automaticamente."
 If more than one package of the same type (for print),Se mais do que uma embalagem do mesmo tipo (para impressão)
+"If multiple Pricing Rules continue to prevail, users are asked to set Priority manually to resolve conflict.","Se múltiplas Regras de Preços continuam prevalecendo, os usuários são solicitados a definir a prioridade manualmente para resolver os conflitos."
 "If no change in either Quantity or Valuation Rate, leave the cell blank.","Se nenhuma alteração em qualquer quantidade ou Avaliação Rate, deixar em branco o celular."
 If not applicable please enter: NA,Se não for aplicável digite: NA
 "If not checked, the list will have to be added to each Department where it has to be applied.","Se não for controlada, a lista deverá ser adicionado a cada departamento onde tem de ser aplicado."
+"If selected Pricing Rule is made for 'Price', it will overwrite Price List. Pricing Rule price is the final price, so no further discount should be applied. Hence, in transactions like Sales Order, Purchase Order etc, it will be fetched in 'Rate' field, rather than 'Price List Rate' field.","Se a Regra de Preços selecionada for feita para 'Preço', ela sobrescreverá a Lista de Preços. O preço da Regra de Preços é o preço final, então nenhum outro desconto será aplicado. Portanto, em transações como Ordem de Venda, Ordem de Compra, etc, ele será carregado no campo 'Valor', ao invés do campo 'Valor da Lista de Preços'."
 "If specified, send the newsletter using this email address","Se especificado, enviar a newsletter usando esse endereço de e-mail"
 "If the account is frozen, entries are allowed to restricted users.","Se a conta for congelada , as entradas são permitidos aos usuários restritos."
 "If this Account represents a Customer, Supplier or Employee, set it here.","Se essa conta representa um cliente, fornecedor ou funcionário, estabeleça aqui."
+"If two or more Pricing Rules are found based on the above conditions, Priority is applied. Priority is a number between 0 to 20 while default value is zero (blank). Higher number means it will take precedence if there are multiple Pricing Rules with same conditions.","Se duas ou mais Regras de Preços forem encontradas baseadas nestas condições, Prioridade será aplicada. Prioridade é um número entre 0 e 20 com valor padrão de zero (branco). Números altos significam precedência se houverem múltiplas Regras de Preços com a mesma condição."
 If you follow Quality Inspection. Enables Item QA Required and QA No in Purchase Receipt,Se você seguir Inspeção de Qualidade . Permite item QA Obrigatório e QA Não no Recibo de compra
 If you have Sales Team and Sale Partners (Channel Partners)  they can be tagged and maintain their contribution in the sales activity,Se você tiver Equipe de Vendas e Parceiros de Venda (Parceiros de Canal) eles podem ser marcadas e manter suas contribuições na atividade de vendas
 "If you have created a standard template in Purchase Taxes and Charges Master, select one and click on the button below.","Se você criou um modelo padrão no cadastro de Impostos de Compra e Encargos, selecione um e clique no botão abaixo."
@@ -1219,11 +1262,11 @@ In Words,Por Extenso
 In Words (Company Currency),Por Extenso (Moeda da Empresa)
 In Words (Export) will be visible once you save the Delivery Note.,Por extenso (Exportação) será visível quando você salvar a Guia de Remessa.
 In Words will be visible once you save the Delivery Note.,Por extenso será visível quando você salvar a Guia de Remessa.
-In Words will be visible once you save the Purchase Invoice.,Por extenso será visível quando você salvar a Nota Fiscal de Compra.
+In Words will be visible once you save the Purchase Invoice.,Por extenso será visível quando você salvar a Fatura de Compra.
 In Words will be visible once you save the Purchase Order.,Por extenso será visível quando você salvar a Ordem de Compra.
 In Words will be visible once you save the Purchase Receipt.,Por extenso será visível quando você salvar o recibo de compra.
 In Words will be visible once you save the Quotation.,Por extenso será visível quando você salvar a cotação.
-In Words will be visible once you save the Sales Invoice.,Por extenso será visível quando você salvar a Nota Fiscal de Venda.
+In Words will be visible once you save the Sales Invoice.,Por extenso será visível quando você salvar a Fatura de Venda.
 In Words will be visible once you save the Sales Order.,Por extenso será visível quando você salvar a Pedido de Venda.
 Incentives,Incentivos
 Include Reconciled Entries,Incluir Lançamentos Reconciliados
@@ -1239,7 +1282,7 @@ Incoming,Entrada
 Incoming Rate,Taxa de Entrada
 Incoming quality inspection.,Inspeção de qualidade de entrada.
 Incorrect or Inactive BOM {0} for Item {1} at row {2},Incorreto ou inativo BOM {0} para {1} item na linha {2}
-Indicates that the package is a part of this delivery,Indica que o pacote é uma parte desta entrega
+Indicates that the package is a part of this delivery (Only Draft),Indica que o pacote é parte desta entrega (Somente Rascunho)
 Indirect Expenses,Despesas Indiretas
 Indirect Income,Receitas Indiretas
 Individual,Individual
@@ -1311,6 +1354,7 @@ Item Advanced,Item antecipado
 Item Barcode,Código de Barras do Item
 Item Batch Nos,Nº do Lote do Item
 Item Code,Código do Item
+Item Code > Item Group > Brand,Código do Item > Grupo do Item > Marca
 Item Code and Warehouse should already exist.,O Código do Item e Almoxarifado já devem existir.
 Item Code cannot be changed for Serial No.,O Código do Item não pode ser alterado para o Nº de Série.
 Item Code is mandatory because Item is not automatically numbered,O Código do Item é obrigatório porque o Item não é numerado automaticamente
@@ -1386,13 +1430,15 @@ Item {0} not found,Item {0} não foi encontrado
 Item {0} with Serial No {1} is already installed,Item {0} com o Nº de Série {1} já está instalado
 Item {0} with same description entered twice,Item {0} com a mesma descrição inserida duas vezes
 "Item, Warranty, AMC (Annual Maintenance Contract) details will be automatically fetched when Serial Number is selected.","Detalhes do Item, Garantia, CAM (Contrato Anual de Manutenção) serão carregados automaticamente quando o Nº de Série for selecionado."
+Item-wise Last Purchase Rate,Valor da Última Compra por Item
 Item-wise Price List Rate,Valor da Lista de Preços por Item 
 Item-wise Purchase History,Histórico de Compras por Item
 Item-wise Purchase Register,Registro de Compras por Item
 Item-wise Sales History,Histórico de Vendas por Item
 Item-wise Sales Register,Registro de Vendas por Item
 "Item: {0} managed batch-wise, can not be reconciled using \
-					Stock Reconciliation, instead use Stock Entry","Item : {0} gerido por lotes , não podem ser reconciliadas usando \ \ n Stock Reconciliação , em vez usar Banco de Entrada"
+					Stock Reconciliation, instead use Stock Entry","Item: {0} gerenciado por lote, não pode ser reconciliado utilizando \
+					Reconciliação de Estoque, em vez disso utilize Lançamento de Estoque"
 Item: {0} not found in the system,Item : {0} não foi encontrado no sistema
 Items,Itens
 Items To Be Requested,Itens a Serem Solicitados
@@ -1648,7 +1694,8 @@ Mr,Sr.
 Ms,Sra.
 Multiple Item prices.,Múltiplos Preços do Item.
 "Multiple Price Rule exists with same criteria, please resolve \
-			conflict by assigning priority. Price Rules: {0}","Várias Rule Preço existe com os mesmos critérios , por favor resolver \ \ n conflito , atribuindo prioridade."
+			conflict by assigning priority. Price Rules: {0}","Existem múltiplas Regras de Preços com os mesmos critérios, por favor resolva \
+			este conflito definindo a prioridade. Regras de Preços: {0}"
 Music,Música
 Must be Whole Number,Deve ser Número Inteiro
 Name,Nome
@@ -1727,6 +1774,7 @@ No Supplier Accounts found. Supplier Accounts are identified based on 'Master Ty
 No accounting entries for the following warehouses,Nenhuma entrada de contabilidade para os seguintes almoxarifados
 No addresses created,Nenhum Endereço criado
 No contacts created,Nenhum contato criado
+No default Address Template found. Please create a new one from Setup > Printing and Branding > Address Template.,Nenhum Modelo de Endereço padrão encontrado. Por favor crie um novo em Configuração > Impressão e Marca > Modelo de Endereço.
 No default BOM exists for Item {0},No BOM padrão existe para item {0}
 No description given,Sem descrição dada
 No employee found,Nenhum colaborador encontrado
@@ -1786,7 +1834,6 @@ Only the selected Leave Approver can submit this Leave Application,Somente o Apr
 Open,Abrir
 Open Production Orders,Pedidos de Produção em Aberto
 Open Tickets,Tickets Abertos
-Open source ERP built for the web,ERP de código aberto construído para a web
 Opening (Cr),Abertura (Cr)
 Opening (Dr),Abertura (Db)
 Opening Date,Data de Abertura
@@ -1852,7 +1899,6 @@ POS Setting required to make POS Entry,Configuração do PDV necessária para fa
 POS Setting {0} already created for user: {1} and company {2},Configuração do PDV {0} já criada para o usuário: {1} e empresa {2}
 POS View,POS Ver
 PR Detail,Detalhe PR
-PR Posting Date,PR Data da Publicação
 Package Item Details,Detalhes do Item do Pacote
 Package Items,Itens do Pacote
 Package Weight Details,Detalhes do Peso do Pacote
@@ -1903,7 +1949,7 @@ Payables,Contas A Pagar
 Payables Group,Grupo de Contas A Pagar
 Payment Days,Datas de Pagamento
 Payment Due Date,Data de Vencimento
-Payment Period Based On Invoice Date,Período de Pagamento com Base no Fatura Data
+Payment Period Based On Invoice Date,Período de Pagamento com Base na Data da Fatura
 Payment Type,Tipo de Pagamento
 Payment of salary for the month {0} and year {1},Pagamento de salário para o mês {0} e {1} ano
 Payment to Invoice Matching Tool,Ferramenta de Pagamento contra Fatura correspondente
@@ -1950,6 +1996,7 @@ Planning,Planejamento
 Plant,Planta
 Plant and Machinery,Máquinas e Instalações
 Please Enter Abbreviation or Short Name properly as it will be added as Suffix to all Account Heads.,Por favor insira a correta Abreviação ou Nome Curto pois ele será adicionado como sufixo a todas as Contas.
+Please Update SMS Settings,Por favor atualize as Configurações  de SMS
 Please add expense voucher details,Por favor adicione despesas detalhes do voucher
 Please check 'Is Advance' against Account {0} if this is an advance entry.,Por favor verifique 'É Advance' contra a Conta {0} se isso é uma entrada antecipadamente.
 Please click on 'Generate Schedule',Por favor clique em 'Gerar Agendamento'
@@ -2071,7 +2118,7 @@ Price List Currency,Moeda da Lista de Preços
 Price List Currency not selected,Moeda da Lista de Preços não selecionada
 Price List Exchange Rate,Taxa de Câmbio da Lista de Preços
 Price List Name,Nome da Lista de Preços
-Price List Rate,Valor de Lista de Preços
+Price List Rate,Valor da Lista de Preços
 Price List Rate (Company Currency),Valor de Lista de Preços (Moeda da Empresa)
 Price List master.,Cadastro de Listas de Preços.
 Price List must be applicable for Buying or Selling,Lista de Preço deve ser aplicável para comprar ou vender
@@ -2079,16 +2126,18 @@ Price List not selected,Lista de Preço não selecionado
 Price List {0} is disabled,Preço de {0} está desativado
 Price or Discount,Preço ou desconto
 Pricing Rule,Regra de Preços
-Pricing Rule For Discount,Preços Regra para desconto
-Pricing Rule For Price,Preços regra para Preço
+Pricing Rule Help,Ajuda com a Regra de Preços
+"Pricing Rule is first selected based on 'Apply On' field, which can be Item, Item Group or Brand.","A Regra de Preços é selecionada primeiro baseado no campo 'Aplicar Em', que pode ser Item, Grupo de Itens ou Marca."
+"Pricing Rule is made to overwrite Price List / define discount percentage, based on some criteria.","A Regra de Preços é feita para sobrescrever a Lista de Preços / definir percentual de descontos, baseado em algum critério."
+Pricing Rules are further filtered based on quantity.,As Regras de Preços são também filtradas baseadas na quantidade.
 Print Format Style,Estilo de Formato de Impressão
 Print Heading,Título da Impressão
 Print Without Amount,Imprimir Sem Quantia
 Print and Stationary,Imprimir e estacionária
-Printing and Branding,Impressão e Branding
+Printing and Branding,Impressão e Marca
 Priority,Prioridade
 Private Equity,Capital Privado
-Privilege Leave,Privilege Deixar
+Privilege Leave,Licença Privilegiada
 Probation,Avaliação
 Process Payroll,Processar Folha de Pagamento
 Produced,Produzido(a)
@@ -2140,7 +2189,6 @@ Purchase Analytics,Análise de Compras
 Purchase Common,Compras Comum
 Purchase Details,Detalhes da Compra
 Purchase Discounts,Descontos da Compra
-Purchase In Transit,Compra Em Trânsito
 Purchase Invoice,Fatura de Compra
 Purchase Invoice Advance,Antecipação da Fatura de Compra
 Purchase Invoice Advances,Antecipações da Fatura de Compra
@@ -2153,9 +2201,9 @@ Purchase Order Item,Item da Ordem de Compra
 Purchase Order Item No,Nº do Item da Ordem de Compra
 Purchase Order Item Supplied,Item da Ordem de Compra fornecido
 Purchase Order Items,Itens da Ordem de Compra
-Purchase Order Items Supplied,Itens da Ordem de Compra fornecidos
-Purchase Order Items To Be Billed,Ordem de Compra itens a serem faturados
-Purchase Order Items To Be Received,Comprar itens para ser recebido
+Purchase Order Items Supplied,Itens da Ordem de Compra Fornecidos
+Purchase Order Items To Be Billed,Itens da Ordem de Compra a Serem Faturados
+Purchase Order Items To Be Received,Itens da Ordem de Compra a Serem Recebidos
 Purchase Order Message,Mensagem da Ordem de Compra
 Purchase Order Required,Ordem de Compra Obrigatória
 Purchase Order Trends,Tendências da Ordem de Compra
@@ -2228,12 +2276,12 @@ Raised By,Emitido(a) Por
 Raised By (Email),Emitido(a) Por (E-Mail)
 Random,Aleatório
 Range,Alcance
-Rate,Taxa
-Rate ,Taxa 
+Rate,Valor
+Rate ,Valor 
 Rate (%),Taxa (%)
-Rate (Company Currency),Rate (moeda da empresa)
-Rate Of Materials Based On,Taxa de materiais com base em
-Rate and Amount,Taxa e Montante
+Rate (Company Currency),Valor (Moeda da Empresa)
+Rate Of Materials Based On,Valor Dos Materiais Com Base Em
+Rate and Amount,Valor e Montante
 Rate at which Customer Currency is converted to customer's base currency,Taxa na qual a moeda do cliente é convertida para a moeda base do cliente
 Rate at which Price list currency is converted to company's base currency,Taxa na qual a moeda da lista de preços é convertida para a moeda base da empresa
 Rate at which Price list currency is converted to customer's base currency,Taxa na qual a moeda da lista de preços é convertida para a moeda base do cliente
@@ -2286,7 +2334,7 @@ Reconciliation HTML,Reconciliação HTML
 Reconciliation JSON,Reconciliação JSON
 Record item movement.,Gravar o movimento do item.
 Recurring Id,Id Recorrente
-Recurring Invoice,Nota Fiscal Recorrente
+Recurring Invoice,Fatura Recorrente
 Recurring Type,Tipo de Recorrência
 Reduce Deduction for Leave Without Pay (LWP),Reduzir Dedução para Licença Não Remunerada (LNR)
 Reduce Earning for Leave Without Pay (LWP),Reduzir Ganhos para Licença Não Remunerada (LNR)
@@ -2381,23 +2429,24 @@ Rounded Total,Total Arredondado
 Rounded Total (Company Currency),Total Arredondado (Moeda da Empresa)
 Row # ,Linha Nº 
 Row # {0}: ,Linha Nº {0}: 
+Row #{0}: Ordered qty can not less than item's minimum order qty (defined in item master).,Linha #{0}: A quantidade solicitada não pode ser menor que a quantidade mínima do item (definida no cadastro do item).
 "Row {0}: Account does not match with \
-						Purchase Invoice Credit To account","Linha {0}: Conta não coincide com \
-                        a conta Crédito da Fatura de Compra Para"
+						Purchase Invoice Credit To account","Linha {0}: Conta não combina com \
+						Crédito de Fatura de Compra Para Conta"
 "Row {0}: Account does not match with \
-						Sales Invoice Debit To account","Linha {0}: Conta não coincide com \
-                        a conta Débito da Fatura de Vendas Para"
+						Sales Invoice Debit To account","Linha {0}: Conta não combina com \
+						Débito de Fatura de Venda Para Conta"
 Row {0}: Credit entry can not be linked with a Purchase Invoice,Row {0}: entrada de crédito não pode ser associada com uma fatura de compra
 Row {0}: Debit entry can not be linked with a Sales Invoice,Row {0}: lançamento de débito não pode ser associada com uma fatura de venda
 "Row {0}: To set {1} periodicity, difference between from and to date \
-						must be greater than or equal to {2}","Fila {0} : Para definir {1} periodicidade , diferença entre a data de e \ \ n deve ser maior do que ou igual a {2}"
+						must be greater than or equal to {2}","Linha {0}: Para definir periodicidade de {1}, a diferença entre da data e para a data \
+						deve ser maior ou igual a {2}"
 Row {0}:Start Date must be before End Date,Row {0}: Data de início deve ser anterior a data de término
 Rules for adding shipping costs.,Regras para adicionar os custos de envio .
 Rules for applying pricing and discount.,Regras para aplicação de preços e de desconto.
 Rules to calculate shipping amount for a sale,Regras para calcular valor de frete para uma venda
 S.O. No.,OV Nº
 SMS Center,Centro de SMS
-SMS Control,Controle de SMS
 SMS Gateway URL,URL de Gateway para SMS
 SMS Log,Registro de SMS
 SMS Parameter,Parâmetro de SMS
@@ -2434,13 +2483,13 @@ Sales Email Settings,Configurações do Email de Vendas
 Sales Expenses,Despesas com Vendas
 Sales Extras,Extras de Vendas
 Sales Funnel,Funil de Vendas
-Sales Invoice,Nota Fiscal de Venda
-Sales Invoice Advance,Antecipação da Nota Fiscal de Venda
-Sales Invoice Item,Item da Nota Fiscal de Venda
+Sales Invoice,Fatura de Venda
+Sales Invoice Advance,Antecipação da Fatura de Venda
+Sales Invoice Item,Item da Fatura de Venda
 Sales Invoice Items,Vendas itens da fatura
-Sales Invoice Message,Mensagem da Nota Fiscal de Venda
-Sales Invoice No,Nº da Nota Fiscal de Venda
-Sales Invoice Trends,Vendas Tendências fatura
+Sales Invoice Message,Mensagem da Fatura de Venda
+Sales Invoice No,Nº da Fatura de Venda
+Sales Invoice Trends,Tendências da Fatura de Vendas
 Sales Invoice {0} has already been submitted,Fatura de vendas {0} já foi apresentado
 Sales Invoice {0} must be cancelled before cancelling this Sales Order,Fatura de vendas {0} deve ser cancelado antes de cancelar esta pedido de venda
 Sales Order,Pedido de Venda
@@ -2462,13 +2511,14 @@ Sales Partners Commission,Comissão dos Parceiros de Vendas
 Sales Person,Vendedor
 Sales Person Name,Nome do Vendedor
 Sales Person Target Variance Item Group-Wise,Variação da Meta do Vendedor por Grupo de Itens
+Sales Person Target Variance (Item Group-Wise),Variação da Meta do Vendedor (por Grupo de Itens)
 Sales Person Targets,Metas do Vendedor
 Sales Person-wise Transaction Summary,Resumo de Transações por Vendedor
 Sales Register,Vendas Registrar
 Sales Return,Retorno de Vendas
 Sales Returned,Vendas Devolvido
-Sales Taxes and Charges,Impostos e Taxas sobre Vendas
-Sales Taxes and Charges Master,Cadastro de Impostos e Taxas sobre Vendas
+Sales Taxes and Charges,Impostos e Encargos sobre Vendas
+Sales Taxes and Charges Master,Cadastro de Impostos e Encargos sobre Vendas
 Sales Team,Equipe de Vendas
 Sales Team Details,Detalhes da Equipe de Vendas
 Sales Team1,Equipe de Vendas
@@ -2502,15 +2552,20 @@ Securities and Deposits,Títulos e depósitos
 "Select ""Yes"" if this item represents some work like training, designing, consulting etc.","Selecione &quot;Sim&quot; se esse item representa algum trabalho como treinamento, design, consultoria, etc"
 "Select ""Yes"" if you are maintaining stock of this item in your Inventory.",Selecione &quot;Sim&quot; se você está mantendo estoque deste item no seu Inventário.
 "Select ""Yes"" if you supply raw materials to your supplier to manufacture this item.",Selecione &quot;Sim&quot; se você fornece as matérias-primas para o seu fornecedor fabricar este item.
+Select Brand...,Selecionar Marca...
 Select Budget Distribution to unevenly distribute targets across months.,Selecione distribuição do orçamento para distribuir metas diferentes para os meses.
 "Select Budget Distribution, if you want to track based on seasonality.","Selecione distribuição do orçamento, se você quiser acompanhar baseado em sazonalidade."
+Select Company...,Selecionar Empresa...
 Select DocType,Selecione o DocType
+Select Fiscal Year...,Selecionar Ano Fiscal...
 Select Items,Selecione os Itens
+Select Project...,Selecionar Projeto...
 Select Purchase Receipts,Selecione os Recibos de Compra
 Select Sales Orders,Selecione as Ordens de Venda
 Select Sales Orders from which you want to create Production Orders.,Selecione as Ordens de Venda a partir das quais você deseja criar Ordens de Produção.
 Select Time Logs and Submit to create a new Sales Invoice.,Selecionar Registros de Tempo e enviar para criar uma nova Fatura de Venda.
 Select Transaction,Selecionar a Transação
+Select Warehouse...,Selecionar Almoxarifado...
 Select Your Language,Selecione seu Idioma
 Select account head of the bank where cheque was deposited.,Selecione a Conta do banco onde o cheque foi depositado.
 Select company name first.,Selecione o nome da empresa por primeiro.
@@ -2564,7 +2619,8 @@ Serial Nos Required for Serialized Item {0},Serial Nos Obrigatório para Seriali
 Serial Number Series,Série do Nº de Série
 Serial number {0} entered more than once,Nº de Série {0} digitado mais de uma vez
 "Serialized Item {0} cannot be updated \
-					using Stock Reconciliation",Serialized item {0} não pode ser atualizado \ \ n usando Banco de Reconciliação
+					using Stock Reconciliation","Item Serializado {0} não pode ser atualizado \
+					usando Reconciliação de Estoque"
 Series,Série
 Series List for this Transaction,Lista de Séries para esta Transação
 Series Updated,Série Atualizada
@@ -2582,6 +2638,7 @@ Set as Lost,Definir como Perdida
 Set prefix for numbering series on your transactions,Definir prefixo para séries de numeração em suas transações
 Set targets Item Group-wise for this Sales Person.,Estabelecer metas para Grupos de Itens para este Vendedor.
 Setting Account Type helps in selecting this Account in transactions.,Definir o Tipo de Conta ajuda na seleção desta Conta nas transações.
+Setting this Address Template as default as there is no other default,Definindo este Modelo de Endereço como padrão uma vez que não há outro.
 Setting up...,Configurando...
 Settings,Configurações
 Settings for HR Module,Configurações para o Módulo HR
@@ -2589,6 +2646,7 @@ Settings for HR Module,Configurações para o Módulo HR
 Setup,Configuração
 Setup Already Complete!!,Instalação já está completa!
 Setup Complete,Instalação concluída
+Setup SMS gateway settings,Configurar Opções do Roteador SMS
 Setup Series,Configuração de Séries
 Setup Wizard,Assistente de Configuração
 Setup incoming server for jobs email id. (e.g. jobs@example.com),Configuração do servidor de entrada de e-mail para empregos. (por exemplo vagas@exemplo.com.br)
@@ -2600,12 +2658,12 @@ Shareholders Funds,CAPITAL PRÓPRIO
 Shipments to customers.,Os embarques para os clientes.
 Shipping,Expedição
 Shipping Account,Conta de Envio
-Shipping Address,Endereço de envio
-Shipping Amount,Valor do transporte
-Shipping Rule,Regra de envio
-Shipping Rule Condition,Regra Condições de envio
-Shipping Rule Conditions,Regra Condições de envio
-Shipping Rule Label,Regra envio Rótulo
+Shipping Address,Endereço de Envio
+Shipping Amount,Valor do Envio
+Shipping Rule,Regra de Envio
+Shipping Rule Condition,Condição da Regra de Envio
+Shipping Rule Conditions,Condições da Regra de Envio
+Shipping Rule Label,Rótulo da Regra de Envio
 Shop,Loja
 Shopping Cart,Carrinho de Compras
 Short biography for website and other publications.,Breve biografia para o site e outras publicações.
@@ -2645,7 +2703,6 @@ Split Delivery Note into packages.,Dividir Guia de Remessa em pacotes.
 Sports,Esportes
 Standard,Padrão
 Standard Buying,Compra Padrão
-Standard Rate,Taxa normal
 Standard Reports,Relatórios Padrão
 Standard Selling,Venda Padrão
 Standard contract terms for Sales or Purchase.,Termos do contrato padrão para vendas ou compra.
@@ -2721,9 +2778,10 @@ Sunday,Domingo
 Supplier,Fornecedor
 Supplier (Payable) Account,Fornecedor (pago) Conta
 Supplier (vendor) name as entered in supplier master,"Nome do fornecedor (vendedor), como inscritos no cadastro de fornecedores"
-Supplier Account,Fornecedor Conta
-Supplier Account Head,Fornecedor Cabeça Conta
+Supplier > Supplier Type,Fornecedor > Tipo de Fornecedor
+Supplier Account Head,Conta Principal do Fornecedor
 Supplier Address,Endereço do Fornecedor
+Supplier Addresses And Contacts,Endereços e Contatos do Fornecedor 
 Supplier Addresses and Contacts,Endereços e Contatos do Fornecedor 
 Supplier Details,Detalhes do Fornecedor
 Supplier Intro,Introdução do Fornecedor
@@ -2773,14 +2831,14 @@ Task,Tarefa
 Task Details,Detalhes da Tarefa
 Tasks,Tarefas
 Tax,Imposto
-Tax Amount After Discount Amount,Total de Impostos Depois Montante do Desconto
+Tax Amount After Discount Amount,Total de Impostos Depois do Total do Desconto
 Tax Assets,Ativo Fiscal
 Tax Category can not be 'Valuation' or 'Valuation and Total' as all items are non-stock items,"Categoria imposto não pode ser ' Avaliação ' ou ' Avaliação e total "", como todos os itens não são itens de estoque"
 Tax Rate,Taxa de Imposto
 Tax and other salary deductions.,Impostos e outras deduções salariais.
 "Tax detail table fetched from item master as a string and stored in this field.
-Used for Taxes and Charges","Tabela de Detalhes do Imposto obtida a partir do cadastro de itens como texto e armazenada neste campo.
-Utilizada nos Impostos e Encargos"
+Used for Taxes and Charges","Tabela de detalhes de impostos obtida do cadastro do item como um texto e armazenada neste campo.
+Usada para Impostos e Encargos"
 Tax template for buying transactions.,Modelo de imposto para transações de compra.
 Tax template for selling transactions.,Modelo de imposto para transações de venda.
 Taxable,Tributável
@@ -2796,6 +2854,7 @@ Technology,Tecnologia
 Telecommunications,Telecomunicações
 Telephone Expenses,Despesas de Telefone
 Television,Televisão
+Template,Modelo
 Template for performance appraisals.,Modelo para avaliação de desempenho.
 Template of terms or contract.,Modelo de termos ou contrato.
 Temporary Accounts (Assets),Contas Temporárias (Ativos)
@@ -2815,6 +2874,7 @@ Territory / Customer,Território/Cliente
 Territory Manager,Gerenciador de Territórios
 Territory Name,Nome do Território
 Territory Target Variance Item Group-Wise,Variação de Metas do Território por Grupo de Itens
+Territory Target Variance (Item Group-Wise),Variação de Metas do Território (por Grupo de Itens)
 Territory Targets,Metas do Território
 Test,Teste
 Test Email Id,Endereço de E-Mail de Teste
@@ -2825,7 +2885,8 @@ The First User: You,O primeiro usuário : Você
 The Organization,a Organização
 "The account head under Liability, in which Profit/Loss will be booked","O chefe conta com Responsabilidade , no qual Lucro / Prejuízo será reservado"
 "The date on which next invoice will be generated. It is generated on submit.
-",A data em que próxima fatura será gerada.
+","A data em que a próxima fatura será gerada. Ela é gerada no envio.
+"
 The date on which recurring invoice will be stop,A data em que fatura recorrente será interrompida
 "The day of the month on which auto invoice will be generated e.g. 05, 28 etc ","O dia do mês em que factura automática será gerada, por exemplo 05, 28 etc"
 The day(s) on which you are applying for leave are holiday. You need not apply for leave.,No dia (s) em que você está se candidatando para a licença estão de férias. Você não precisa solicitar uma licença .
@@ -2837,6 +2898,7 @@ The net weight of this package. (calculated automatically as sum of net weight o
 The new BOM after replacement,A nova LDM após substituição
 The rate at which Bill Currency is converted into company's base currency,A taxa na qual a moeda de faturamento é convertida na moeda base da empresa
 The unique id for tracking all recurring invoices. It is generated on submit.,A ID exclusiva para acompanhar todas as facturas recorrentes. Ele é gerado em enviar.
+"Then Pricing Rules are filtered out based on Customer, Customer Group, Territory, Supplier, Supplier Type, Campaign, Sales Partner etc.","Então as Regras de Preços são filtradas baseadas no Cliente, Grupo de Clientes, Território, Fornecedor, Tipo de Fornecedor, Campanha, Parceiro de Vendas, etc."
 There are more holidays than working days this month.,Há mais feriados do que dias úteis do mês.
 "There can only be one Shipping Rule Condition with 0 or blank value for ""To Value""","Só pode haver uma regra de envio Condição com 0 ou valor em branco para "" To Valor """
 There is not enough leave balance for Leave Type {0},Não há o suficiente equilíbrio pela licença Tipo {0}
@@ -2848,6 +2910,7 @@ This Leave Application is pending approval. Only the Leave Apporver can update s
 This Time Log Batch has been billed.,Este Lote de Registros de Tempo foi faturado.
 This Time Log Batch has been cancelled.,Este Lote de Registros de Tempo foi cancelado.
 This Time Log conflicts with {0},Este Registro de Tempo conflita com {0}
+This format is used if country specific format is not found,Este formato é utilizado se um formato específico do país não for encontrado
 This is a root account and cannot be edited.,Esta é uma conta de root e não pode ser editada.
 This is a root customer group and cannot be edited.,Este é um grupo de clientes de raiz e não pode ser editada.
 This is a root item group and cannot be edited.,Este é um grupo de itens de raiz e não pode ser editada.
@@ -2894,13 +2957,14 @@ To enable <b>Point of Sale</b> view,Para habilitar <b> Point of Sale </ b> vista
 To get Item Group in details table,Para obter Grupo de Itens na tabela de detalhes
 "To include tax in row {0} in Item rate, taxes in rows {1} must also be included","Para incluir impostos na linha {0} na taxa de Item, os impostos em linhas {1} também deve ser incluída"
 "To merge, following properties must be same for both items","Para mesclar , seguintes propriedades devem ser os mesmos para ambos os itens"
-"To report an issue, go to ",
+"To not apply Pricing Rule in a particular transaction, all applicable Pricing Rules should be disabled.","Para não aplicar Regra de Preços em um transação em particular, todas as Regras de Preços aplicáveis devem estar desabilitadas."
 "To set this Fiscal Year as Default, click on 'Set as Default'","Para definir esse Ano Fiscal como padrão , clique em ' Definir como padrão '"
 To track any installation or commissioning related work after sales,Para rastrear qualquer trabalho relacionado à instalação ou colocação em funcionamento após a venda
-"To track brand name in the following documents Delivery Note, Opportunity, Material Request, Item, Purchase Order, Purchase Voucher, Purchaser Receipt, Quotation, Sales Invoice, Sales BOM, Sales Order, Serial No","Para acompanhar marca nos seguintes documentos Nota de Entrega , Oportunidade, Solicitação Material, Item, Ordem de Compra, Compra Vale , Comprador recibo , cotação, nota fiscal de venda , Vendas BOM, Pedido de Vendas , Nº de Série"
+"To track brand name in the following documents Delivery Note, Opportunity, Material Request, Item, Purchase Order, Purchase Voucher, Purchaser Receipt, Quotation, Sales Invoice, Sales BOM, Sales Order, Serial No","Para acompanhar marca nos seguintes documentos Nota de Entrega , Oportunidade, Solicitação Material, Item, Ordem de Compra, Compra Vale , Comprador recibo , cotação, fatura de venda , Vendas BOM, Pedido de Vendas , Nº de Série"
 To track item in sales and purchase documents based on their serial nos. This is can also used to track warranty details of the product.,Para acompanhar o item em documentos de vendas e de compras com base em seus números de série. Isso também pode ser usado para rastrear detalhes sobre a garantia do produto.
 To track items in sales and purchase documents with batch nos<br><b>Preferred Industry: Chemicals etc</b>,"Para controlar os itens de vendas e documentos de compra pelo nº do lote<br> <b>Por Ex.: Indústria Química, etc</b>"
-To track items using barcode. You will be able to enter items in Delivery Note and Sales Invoice by scanning barcode of item.,Para rastrear itens usando código de barras. Você será capaz de inserir itens na Guia de Remessa e Nota Fiscal de Venda através do escaneamento do código de barras do item.
+To track items using barcode. You will be able to enter items in Delivery Note and Sales Invoice by scanning barcode of item.,Para rastrear itens usando código de barras. Você será capaz de inserir itens na Guia de Remessa e Fatura de Venda através do escaneamento do código de barras do item.
+Today,Hoje
 Tools,Ferramentas
 Total,Total
 Total Advance,Antecipação Total
@@ -2941,6 +3005,7 @@ Total amount of invoices sent to the customer during the digest period,O valor t
 Total cannot be zero,Total não pode ser zero
 Total in words,Total por extenso
 Total points for all goals should be 100. It is {0},Total de pontos para todos os objetivos devem ser 100. Ele é {0}
+Total valuation for manufactured or repacked item(s) can not be less than total valuation of raw materials,A valor total para itens fabricados ou reempacotados não pode ser menor que o valor total da matéria-prima
 Total weightage assigned should be 100%. It is {0},Weightage total atribuído deve ser de 100 %. É {0}
 Totals,Totais
 Track Leads by Industry Type.,Rastrear Prospectos por Ramo de Atividade.
@@ -2959,6 +3024,7 @@ Transporter Name,Nome da Transportadora
 Transporter lorry number,Nº do Caminhão da Transportadora
 Travel,Viagem
 Travel Expenses,Despesas de Viagem
+Tree,Três
 Tree Type,Tipo de Estrutura
 Tree of Item Groups.,Estrutura dos Grupos de Itens.
 Tree of finanial Cost Centers.,Estrutura dos Centros de Custo Financeiros.
@@ -2976,7 +3042,7 @@ UOM Conversion Details,Detalhes da Conversão de UDM
 UOM Conversion Factor,Fator de Conversão da UDM
 UOM Conversion factor is required in row {0},Fator de Conversão da UDM é necessário na linha {0}
 UOM Name,Nome da UDM
-UOM coversion factor required for UOM {0} in Item {1},Fator coversion UOM necessário para UOM {0} no item {1}
+UOM coversion factor required for UOM: {0} in Item: {1},O fator de conversão de UDM necessário para a UDM: {0} no Item: {1}
 Under AMC,Sob CAM
 Under Graduate,Em Graduação
 Under Warranty,Sob Garantia
@@ -3005,7 +3071,7 @@ Update Stock,Atualizar Estoque
 "Update allocated amount in the above table and then click ""Allocate"" button",Atualize o montante atribuído na tabela acima e clique no botão 'Alocar'
 Update bank payment dates with journals.,Atualizar datas de pagamento bancário com livro Diário.
 Update clearance date of Journal Entries marked as 'Bank Vouchers',Data de apuramento Atualização de entradas de diário marcado como ' Banco ' Vouchers
-Updated,Atualizado(a)
+Updated,Atualizado
 Updated Birthday Reminders,Lembretes de Aniversário Atualizados
 Upload Attendance,Carregar Comparecimento
 Upload Backups to Dropbox,Carregar Backups para Dropbox
@@ -3067,6 +3133,7 @@ Warehouse,Almoxarifado
 Warehouse Contact Info,Informações de Contato do Almoxarifado
 Warehouse Detail,Detalhe do Almoxarifado
 Warehouse Name,Nome do Almoxarifado 
+Warehouse User,Usuário do Almoxarifado
 Warehouse and Reference,Almoxarifado e Referência
 Warehouse can not be deleted as stock ledger entry exists for this warehouse.,Almoxarifado não pode ser excluído como existe entrada de material de contabilidade para este almoxarifado.
 Warehouse can only be changed via Stock Entry / Delivery Note / Purchase Receipt,Almoxarifado só pode ser alterado através da entrada / Nota de Entrega / Recibo de Compra
@@ -3146,12 +3213,10 @@ Year Closed,Ano Encerrado
 Year End Date,Data de Fim de Ano
 Year Name,Nome do Ano
 Year Start Date,Data de início do ano
-Year Start Date and Year End Date are already set in Fiscal Year {0},Ano Data de Início e Fim de Ano Data já estão definidos no ano fiscal de {0}
-Year Start Date and Year End Date are not within Fiscal Year.,Ano Data de Início e Fim de Ano Data não estão dentro de Ano Fiscal.
-Year Start Date should not be greater than Year End Date,Ano Data de início não deve ser maior do que o Fim de Ano Data
 Year of Passing,Ano de Passagem
 Yearly,Anual
 Yes,Sim
+Yesterday,Ontem
 You are not authorized to add or update entries before {0},Você não está autorizado para adicionar ou atualizar entradas antes de {0}
 You are not authorized to set Frozen value,Você não está autorizado para definir o valor congelado
 You are the Expense Approver for this record. Please Update the 'Status' and Save,Você é o aprovador de despesa para esse registro. Atualize o 'Estado' e salvar
@@ -3188,6 +3253,7 @@ Your support email id - must be a valid email - this is where your emails will c
 and,e
 are not allowed.,não são permitidos.
 assigned by,atribuído por
+delete this,excluir este
 "e.g. ""Build tools for builders""","por exemplo ""Construir ferramentas para os construtores"""
 "e.g. ""MC""","por exemplo ""MC"""
 "e.g. ""My Company LLC""","por exemplo ""Minha Empresa Ltda"""
@@ -3198,6 +3264,7 @@ e.g. VAT,por exemplo IVA
 eg. Cheque Number,por exemplo Nº do Cheque
 example: Next Day Shipping,exemplo: Envio no Dia Seguinte
 lft,esq.
+logged in at,entrou no sistema em
 old_parent,old_parent
 rgt,dir.
 website page link,link da página do site
@@ -3213,7 +3280,7 @@ website page link,link da página do site
 {0} is mandatory for Item {1},{0} é obrigatório para item {1}
 {0} is not a stock Item,{0} não é um item de estoque
 {0} is not a valid Batch Number for Item {1},{0} não é um número de lote válido por item {1}
-{0} is not a valid Leave Approver,{0} não é uma licença válida Aprovador
+{0} is not a valid Leave Approver. Removing row #{1}.,{0} não é um Aprovador de Férias válido. Removendo a linha Nº{1}.
 {0} is not a valid email id,{0} não é um ID de e-mail válido
 {0} is now the default Fiscal Year. Please refresh your browser for the change to take effect.,{0} é agora o padrão Ano Fiscal. Por favor atualize seu navegador para que a alteração tenha efeito.
 {0} is required,{0} é necessária
