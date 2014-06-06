@@ -1163,11 +1163,11 @@ Grand Total (Company Currency),Grande Total (moeda da empresa)
 Grocery,Mercearia
 Gross Margin %,Margem Bruta %
 Gross Margin Value,Valor Margem Bruta
-Gross Pay,Salário bruto
-Gross Pay + Arrear Amount +Encashment Amount - Total Deduction,Salário bruto + Valor em atraso + Valor de cobrança - Dedução Total
-Gross Profit,Lucro bruto
+Gross Pay,Salário Bruto
+Gross Pay + Arrear Amount +Encashment Amount - Total Deduction,Salário Bruto + Valor em Atraso + Valor de Cobrança - Dedução Total
+Gross Profit,Lucro Bruto
 Gross Profit (%),Lucro Bruto (%)
-Gross Weight,Peso bruto
+Gross Weight,Peso Bruto
 Gross Weight UOM,UDM do Peso Bruto
 Group,Grupo
 Group by Account,Grupo por Conta
@@ -2222,7 +2222,7 @@ Purchase Receipt Required,Recibo de Compra Obrigatório
 Purchase Receipt Trends,Tendências de Recibo de Compras
 Purchase Receipt number required for Item {0},Número Recibo de compra necessário para item {0}
 Purchase Receipt {0} is not submitted,Recibo de compra {0} não é submetido
-Purchase Register,Compra Registre
+Purchase Register,Registro de Compras 
 Purchase Return,Devolução de Compra
 Purchase Returned,Compra Devolvida
 Purchase Taxes and Charges,Impostos e Encargos sobre Compras
@@ -2514,7 +2514,7 @@ Sales Person Target Variance Item Group-Wise,Variação da Meta do Vendedor por 
 Sales Person Target Variance (Item Group-Wise),Variação da Meta do Vendedor (por Grupo de Itens)
 Sales Person Targets,Metas do Vendedor
 Sales Person-wise Transaction Summary,Resumo de Transações por Vendedor
-Sales Register,Vendas Registrar
+Sales Register,Registro de Vendas
 Sales Return,Retorno de Vendas
 Sales Returned,Vendas Devolvido
 Sales Taxes and Charges,Impostos e Encargos sobre Vendas
