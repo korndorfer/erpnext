@@ -326,6 +326,53 @@
    "read_only": 0
   }, 
   {
+   "fieldname": "legal_info", 
+   "fieldtype": "Section Break", 
+   "label": "Legal Info", 
+   "options": "", 
+   "permlevel": 0
+  }, 
+  {
+   "fieldname": "legal_name", 
+   "fieldtype": "Data", 
+   "in_filter": 1, 
+   "in_list_view": 1, 
+   "label": "Legal Name", 
+   "permlevel": 0, 
+   "reqd": 1, 
+   "search_index": 1
+  }, 
+  {
+   "fieldname": "state_tax_number", 
+   "fieldtype": "Data", 
+   "in_filter": 1, 
+   "in_list_view": 1, 
+   "label": "State Tax Number", 
+   "permlevel": 0, 
+   "search_index": 1
+  }, 
+  {
+   "fieldname": "column_break_37", 
+   "fieldtype": "Column Break", 
+   "permlevel": 0
+  }, 
+  {
+   "fieldname": "national_tax_number", 
+   "fieldtype": "Data", 
+   "in_filter": 1, 
+   "in_list_view": 1, 
+   "label": "National Tax Number", 
+   "permlevel": 0, 
+   "reqd": 1, 
+   "search_index": 1
+  }, 
+  {
+   "fieldname": "city_tax_number", 
+   "fieldtype": "Data", 
+   "label": "City Tax Number", 
+   "permlevel": 0
+  }, 
+  {
    "description": "Company registration numbers for your reference. Example: VAT Registration Numbers etc.", 
    "fieldname": "registration_info", 
    "fieldtype": "Section Break", 
@@ -343,12 +390,13 @@
    "oldfieldname": "registration_details", 
    "oldfieldtype": "Code", 
    "permlevel": 0, 
-   "read_only": 0
+   "read_only": 0, 
+   "width": "100%"
   }
  ], 
  "icon": "icon-building", 
  "idx": 1, 
- "modified": "2014-05-27 03:49:08.597191", 
+ "modified": "2014-06-06 09:40:56.650942", 
  "modified_by": "Administrator", 
  "module": "Setup", 
  "name": "Company", 
@@ -356,6 +404,7 @@
  "permissions": [
   {
    "amend": 0, 
+   "cancel": 0, 
    "create": 1, 
    "delete": 1, 
    "email": 1, 
@@ -368,7 +417,6 @@
    "write": 1
   }, 
   {
-   "apply_user_permissions": 1, 
    "delete": 0, 
    "email": 1, 
    "permlevel": 0, 

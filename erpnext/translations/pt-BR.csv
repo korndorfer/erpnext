@@ -491,6 +491,7 @@ Cheque Number,Nº do Cheque
 Child account exists for this account. You can not delete this account.,Conta Filha existe para esta conta. Você não pode excluir esta conta.
 City,Cidade
 City/Town,Cidade/Município
+City Tax Number,Inscrição Municipal
 Claim Amount,Valor Requerido
 Claims for company expense.,Os pedidos de despesa da empresa.
 Class / Percentage,Classe / Percentual
@@ -1174,6 +1175,7 @@ Hours,Horas
 How frequently?,Com que frequência?
 "How should this currency be formatted? If not set, will use system defaults","Como essa moeda deve ser formatada? Se não for definido, serão usados os padrões do sistema"
 Human Resources,Recursos Humanos
+Identification Card,RG
 Identification of the package for the delivery (for print),Identificação do pacote para a Entrega (para impressão)
 If Income or Expense,Se Receita ou Despesa
 If Monthly Budget Exceeded,Se o orçamento mensal for excedido
@@ -1241,6 +1243,7 @@ Indicates that the package is a part of this delivery,Indica que o pacote é uma
 Indirect Expenses,Despesas Indiretas
 Indirect Income,Receitas Indiretas
 Individual,Individual
+Individual Tax Number,CPF
 Industry,Indústria
 Industry Type,Ramo de Atividade
 Inspected By,Inspecionado por
@@ -1477,6 +1480,8 @@ Ledgers,Livros Contábeis
 Left,Esquerda
 Legal,Legal
 Legal Expenses,Despesas Legais
+Legal Info,Informações Legais
+Legal Name,Razão Social
 Letter Head,Cabeçalho Timbrado
 Letter Heads for print templates.,Cabeçalhos Timbrados para modelos de impressão.
 Level,Nível
@@ -1653,6 +1658,7 @@ Name and Employee ID,Nome e Identificação do Colaborador
 Name of person or organization that this address belongs to.,Nome da pessoa ou organização a que este endereço pertence.
 Name of the Budget Distribution,Nome da Distribuição de Orçamento
 Naming Series,Séries Nomeadas
+National Tax Number,CNPJ
 Negative Quantity is not allowed,Quantidade Negativa não é permitida
 Negative Stock Error ({6}) for Item {0} in Warehouse {1} on {2} {3} in {4} {5},Negativo Banco de Erro ( {6} ) para item {0} no Almoxarifado {1} em {2} {3} em {4} {5}
 Negative Valuation Rate is not allowed,Negativa Avaliação Taxa não é permitido
@@ -2648,6 +2654,7 @@ Start Date,Data de Início
 Start date of current invoice's period,Data de início do período de fatura atual
 Start date should be less than end date for Item {0},Data de início deve ser inferior a data final para o item {0}
 State,Estado
+State Tax Number,Inscrição Estadual
 Static Parameters,Parâmetros Estáticos
 Status,Estado
 Status must be one of {0},Estado deve ser um dos {0}

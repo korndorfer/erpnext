@@ -55,6 +55,55 @@
    "reqd": 1
   }, 
   {
+   "depends_on": "", 
+   "fieldname": "legal_info", 
+   "fieldtype": "Section Break", 
+   "label": "Legal Info", 
+   "options": "icon-book", 
+   "permlevel": 0
+  }, 
+  {
+   "depends_on": "", 
+   "fieldname": "legal_name", 
+   "fieldtype": "Data", 
+   "in_filter": 1, 
+   "in_list_view": 1, 
+   "label": "Legal Name", 
+   "permlevel": 0, 
+   "search_index": 1
+  }, 
+  {
+   "fieldname": "state_tax_number", 
+   "fieldtype": "Data", 
+   "in_filter": 1, 
+   "in_list_view": 1, 
+   "label": "State Tax Number", 
+   "permlevel": 0, 
+   "search_index": 1
+  }, 
+  {
+   "fieldname": "column_break_9", 
+   "fieldtype": "Column Break", 
+   "permlevel": 0
+  }, 
+  {
+   "fieldname": "national_tax_number", 
+   "fieldtype": "Data", 
+   "in_filter": 1, 
+   "in_list_view": 1, 
+   "label": "National Tax Number", 
+   "permlevel": 0, 
+   "search_index": 1
+  }, 
+  {
+   "fieldname": "city_tax_number", 
+   "fieldtype": "Data", 
+   "in_list_view": 0, 
+   "label": "City Tax Number", 
+   "permlevel": 0, 
+   "search_index": 0
+  }, 
+  {
    "depends_on": "eval:!doc.__islocal", 
    "fieldname": "address_contacts", 
    "fieldtype": "Section Break", 
@@ -186,7 +235,7 @@
  ], 
  "icon": "icon-user", 
  "idx": 1, 
- "modified": "2014-05-27 03:49:20.060872", 
+ "modified": "2014-06-06 09:30:40.018878", 
  "modified_by": "Administrator", 
  "module": "Buying", 
  "name": "Supplier", 
@@ -194,6 +243,7 @@
  "permissions": [
   {
    "amend": 0, 
+   "cancel": 0, 
    "create": 0, 
    "delete": 0, 
    "email": 1, 
@@ -207,6 +257,7 @@
   }, 
   {
    "amend": 0, 
+   "cancel": 0, 
    "create": 1, 
    "delete": 1, 
    "email": 1, 
@@ -219,13 +270,11 @@
    "write": 1
   }, 
   {
-   "apply_user_permissions": 1, 
    "permlevel": 0, 
    "read": 1, 
    "role": "Material User"
   }, 
   {
-   "apply_user_permissions": 1, 
    "permlevel": 0, 
    "read": 1, 
    "role": "Accounts User"
