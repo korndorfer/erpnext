@@ -1792,7 +1792,7 @@ Not Applicable,Não Aplicável
 Not Available,Não Disponível
 Not Billed,Não Faturado
 Not Delivered,Não Entregue
-Not Set,não informado
+Not Set,Não Definido
 Not allowed to update entries older than {0},Não permitido para atualizar as entradas mais velho do que {0}
 Not authorized to edit frozen Account {0},Não autorizado para editar conta congelada {0}
 Not authroized since {0} exceeds limits,Não authroized desde {0} excede os limites
@@ -1831,7 +1831,7 @@ Only Leave Applications with status 'Approved' can be submitted,Só Solicitaçõ
 "Only Serial Nos with status ""Available"" can be delivered.",Apenas os Nºs de Série com status de 'Disponível' podem ser entregues.
 Only leaf nodes are allowed in transaction,Somente nós-folha são permitidos em transações
 Only the selected Leave Approver can submit this Leave Application,Somente o Aprovador de Férias selecionado pode enviar esta Solicitação de Férias
-Open,Abrir
+Open,Aberto
 Open Production Orders,Pedidos de Produção em Aberto
 Open Tickets,Tickets Abertos
 Opening (Cr),Abertura (Cr)
